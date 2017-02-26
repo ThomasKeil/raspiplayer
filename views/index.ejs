@@ -1,0 +1,11 @@
+<ul>
+<% files.forEach(function(file) { %>
+<li><a href="/?play=<%= file %>"><%= file %></a></li>
+
+<% }) %>
+</ul>
+<ul>
+<li><a href="/?action=stop">Stop</a></li>
+<li><a href="/?action=volinc">Lauter</a></li>
+<li><a href="/?action=voldec">Leiser</a></li>
+</ul>
