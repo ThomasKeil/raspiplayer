@@ -1,8 +1,64 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+ul.files {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.files li {
+  border: 1px solid #00391b;
+  padding: 0;
+  margin: 15px;
+}
+
 a {
-  color: #00B7FF;
+  display: block;
+  padding: 15px;
+  color: #00391b;
+  text-decoration: none;
+}
+
+
+ul.player {
+  list-style: none;
+  padding: 0;
+}
+
+ul.player li {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
+
+ul.player li a {
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+  display: block;
+  background-color: #1b371b;
+}
+
+ul.player li a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #2b542c;
+
+}
+
+div.top {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 120px;
+  background-color: #e0fff6;
+  width: 100%;
+  border-top: 1px solid #00391b;
+  padding: 20px;
+  text-align: center;
+}
+
+div.scroll {
+  margin-bottom: 100px;
 }

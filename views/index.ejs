@@ -1,11 +1,16 @@
-<ul>
-<% files.forEach(function(file) { %>
-<li><a href="/?play=<%= file %>"><%= file %></a></li>
-
-<% }) %>
-</ul>
-<ul>
-<li><a href="/?action=stop">Stop</a></li>
-<li><a href="/?action=volinc">Lauter</a></li>
-<li><a href="/?action=voldec">Leiser</a></li>
-</ul>
+<div class="top">
+    <ul class="player">
+        <li><a href="/?action=voldec" class="glyphicon glyphicon-volume-down" title="Leiser"></a></li>
+        <li><a class="glyphicon glyphicon-stop" href="/?action=stop"  aria-hidden="true" title="Stop"></a></li>
+        <li><a class="glyphicon glyphicon-step-forward" href="/?action=next"  aria-hidden="true" title="Weiter"></a></li>
+        <li><a href="/?action=volinc" class="glyphicon glyphicon-volume-up" title="Lauter"></a></li>
+    </ul>
+    <div>Zuletzt gesehenes Tag: <%= lastTag %></div>
+</div>
+<div class="scroll">
+    <ul class="files">
+        <% files.forEach(function(file) { %>
+        <li><a href="/?play=<%= file %>"><%= file %></a></li>
+        <% }) %>
+    </ul>
+</div>
