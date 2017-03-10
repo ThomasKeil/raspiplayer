@@ -1,4 +1,5 @@
 var express = require('express');
+var expressLayouts = require('express-ejs-layouts');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -15,6 +16,7 @@ var users = require('./routes/users');
 
 var app = express();
 app.set('view engine', 'ejs');
+app.listen(80, '0.0.0.0');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,6 +28,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(expressLayouts);
 
 app.use('/', index);
 app.use('/users', users);
@@ -41,7 +45,8 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  // res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = err;
 
   // render the error page
   res.status(err.status || 500);
